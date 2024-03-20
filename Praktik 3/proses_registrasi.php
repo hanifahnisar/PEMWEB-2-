@@ -8,6 +8,21 @@ $skills = $_POST['skills'];
 $domisili = $_POST['domisili'];
 $email = $_POST['email'];
 
+$nilai_skills = [
+    'HTML' => 10,
+    'CSS' => 10,
+    'JavaScript' => 20,
+    'RWD Bootstrap' => 20,
+    'PHP' => 30,
+    'Phyton' => 30,
+    'Java' => 50,
+];
+
+$skor_skill = 0;
+foreach ($skill as $value) {
+    $skor_skill += $nilai_skills [$value];
+}
+
 echo "NIM: $nim";
 echo "<br>Nama Lengkap: $nama";
 echo "<br> Jenis Kelamin: $jk";
@@ -15,3 +30,5 @@ echo "<br> Program Studi: $prodi";
 echo "<br>Skill:" . join(',', $skills);
 echo "<br>Domisili: $domisili";
 echo "<br>Email: $email";
+echo "<br>Skor Skill: $skor_skill";
+echo "<br>Kategori Skill: ";
